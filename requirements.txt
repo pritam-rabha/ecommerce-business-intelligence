@@ -1,0 +1,22 @@
+# E-Commerce Business Intelligence Platform -- Dependencies
+# Install with: pip install -r requirements.txt
+
+# Core app framework
+streamlit>=1.38,<2.0
+
+# Data processing
+pandas>=2.2,<3.0
+numpy>=1.26,<2.0
+
+# Visualization
+plotly>=5.22,<6.0
+matplotlib>=3.9,<4.0
+
+# Database
+SQLAlchemy>=2.0,<3.0
+
+# Excel export support (used by pandas.ExcelWriter)
+openpyxl>=3.1,<4.0
+
+# Optional: only required if migrating from SQLite to MySQL (see database.py)
+# PyMySQL>=1.1,<2.0

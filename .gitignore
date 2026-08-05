@@ -1,0 +1,66 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ---- Virtual environments ----
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# ---- Streamlit ----
+.streamlit/secrets.toml
+
+# ---- Jupyter ----
+.ipynb_checkpoints/
+*.ipynb
+
+# ---- Database ----
+database/*.db
+database/*.sqlite3
+*.db-journal
+
+# ---- Data files ----
+# Raw dataset can be large and is available for download separately
+# (see README > Dataset). Keep a .gitkeep so the folder structure is
+# preserved in the repo; ignore the actual data.
+data/*.csv
+!data/.gitkeep
+
+# ---- Environment / secrets ----
+.env
+.env.*
+*.pem
+*.key
+
+# ---- IDE / editor ----
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ---- Logs ----
+*.log
+logs/
+
+# ---- OS ----
+.DS_Store
+Desktop.ini
+
+# ---- Test / coverage ----
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
