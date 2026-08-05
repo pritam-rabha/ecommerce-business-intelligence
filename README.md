@@ -1,4 +1,4 @@
-# 📊 E-Commerce Business Intelligence Platform
+# E-Commerce Business Intelligence Platform
 
 A full-stack, production-style **Business Intelligence dashboard** for an e-commerce business — built with Python, Streamlit, SQLite/SQLAlchemy, and Plotly. It ingests raw transactional order data, cleans and models it, stores it in a relational database, and surfaces it through an interactive, multi-page analytics dashboard with automated business insights.
 
@@ -8,7 +8,7 @@ Built to demonstrate the end-to-end skill set of a **Data Analyst / Business Int
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Project Overview](#-project-overview)
 - [Features](#-features)
@@ -23,7 +23,7 @@ Built to demonstrate the end-to-end skill set of a **Data Analyst / Business Int
 
 ---
 
-## 🧭 Project Overview
+## Project Overview
 
 Online retailers generate huge volumes of raw transactional data, but raw data isn't decision-ready. This project simulates the work of an in-house BI team: turning messy invoice-level order data into a governed dataset and a self-service analytics platform that a Sales, Marketing, or Executive team could actually use.
 
@@ -33,15 +33,15 @@ The platform covers the full pipeline:
 
 ---
 
-## ✨ Features
+## Features
 
-### 🧹 Data Engineering
+### Data Engineering
 - Automated cleaning pipeline: duplicate removal, missing-value handling, datatype enforcement, cancelled-order removal, invalid quantity/price filtering
 - Derived fields: `TotalPrice`, `Year`, `Month`, `Weekday`, `Week`, etc.
 - Cleaned data persisted both as CSV and into a SQLite database via SQLAlchemy
 - Reusable, parameterized SQL query layer (`OrderQueries`) — portable to MySQL/Postgres with a one-line connection string change
 
-### 📊 Interactive Dashboard (7 pages)
+### Interactive Dashboard (7 pages)
 | Page | Key Metrics |
 |---|---|
 | **Executive Dashboard** | Revenue, Orders, Customers, Products, AOV, MoM Growth, KPI cards |
@@ -52,23 +52,23 @@ The platform covers the full pipeline:
 | **Business Insights** | Auto-generated natural-language insights, order value distribution |
 | **Data Explorer** | Raw filtered data preview, CSV/Excel export, live database query snapshot |
 
-### 🎛️ Filtering
+### Filtering
 Sidebar filters for **Date Range, Country, Customer, Product, and Invoice Number**, combined with logical AND and applied live across every page.
 
-### 📈 Visualization
+### Visualization
 9 chart types via Plotly: bar, line, area, pie, donut, treemap, heatmap, scatter, histogram — plus an interactive choropleth map.
 
-### ⬇️ Export
+### Export
 One-click **CSV** and formatted **Excel** (via OpenPyXL) export of the currently filtered dataset.
 
-### ⚡ Performance
+### Performance
 - `st.cache_data` for the cleaning pipeline and aggregation results
 - `st.cache_resource` for the database engine/connection
 - Aggregation pushed to pandas/SQL rather than row-by-row Python loops
 
 ---
 
-## 🖼️ Screenshots
+## Screenshots
 
 > Add screenshots of the running app here after your first local run.
 
@@ -84,7 +84,7 @@ screenshots/
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 | Category | Technology |
 |---|---|
@@ -98,7 +98,7 @@ screenshots/
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 ecommerce-business-intelligence/
@@ -132,7 +132,7 @@ ecommerce-business-intelligence/
 
 ---
 
-## ⚙️ Installation
+## Installation
 
 **Prerequisites:** Python 3.12 (3.10+ generally works), pip, git.
 
@@ -151,7 +151,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🚀 Usage
+## Usage
 
 ```bash
 streamlit run app.py
@@ -170,7 +170,7 @@ python -m src.database          # rebuilds database/ecommerce.db
 
 ---
 
-## 🗂️ Dataset
+## Dataset
 
 This project targets the **[Online Retail Dataset](https://www.kaggle.com/datasets/carrie1/ecommerce-data)** on Kaggle — real transactional data from a UK-based online retailer (Dec 2010–Dec 2011), with columns:
 
@@ -186,7 +186,7 @@ This project targets the **[Online Retail Dataset](https://www.kaggle.com/datase
 
 ---
 
-## 🔮 Future Improvements
+## Future Improvements
 
 - [ ] Native MySQL/PostgreSQL deployment (connection string is already parameterized in `database.py`)
 - [ ] RFM (Recency, Frequency, Monetary) customer segmentation model
@@ -200,7 +200,7 @@ This project targets the **[Online Retail Dataset](https://www.kaggle.com/datase
 
 ---
 
-## 📄 License
+## License
 
 This project is released under the [MIT License](LICENSE). Free to use, modify, and distribute for personal, academic, or portfolio purposes.
 
