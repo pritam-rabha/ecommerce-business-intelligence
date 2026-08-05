@@ -30,11 +30,9 @@ database/*.sqlite3
 *.db-journal
 
 # ---- Data files ----
-# Raw dataset can be large and is available for download separately
-# (see README > Dataset). Keep a .gitkeep so the folder structure is
-# preserved in the repo; ignore the actual data.
-data/*.csv
-!data/.gitkeep
+# Keep datasets in repository for deployment
+!data/orders.csv
+!data/orders_clean.csv
 
 # ---- Environment / secrets ----
 .env
