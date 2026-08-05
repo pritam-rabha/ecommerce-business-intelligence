@@ -26,10 +26,10 @@ def generate_business_insights(df: pd.DataFrame) -> list[dict]:
     Generate a list of auto-computed business insights.
 
     Returns:
-        A list of dicts, each with keys: icon, label, value, detail.
+        A list of dicts, each with keys: label, value, detail.
     """
     if df.empty:
-        return [{"icon": "⚠️", "label": "No Data", "value": "--", "detail": "No records match the current filters."}]
+        return [{"label": "No Data", "value": "--", "detail": "No records match the current filters."}]
 
     insights = []
 
@@ -38,7 +38,7 @@ def generate_business_insights(df: pd.DataFrame) -> list[dict]:
     if not monthly.empty:
         best_month = monthly.idxmax()
         insights.append({
-            "icon": "📅", "label": "Highest Revenue Month", "value": best_month,
+            "label": "Highest Revenue Month", "value": best_month,
             "detail": f"Generated {format_currency(monthly.max())} in revenue.",
         })
 
@@ -47,13 +47,13 @@ def generate_business_insights(df: pd.DataFrame) -> list[dict]:
     if not product_revenue.empty:
         best_product = product_revenue.idxmax()
         insights.append({
-            "icon": "🏆", "label": "Best-Selling Product", "value": best_product,
+            "label": "Best-Selling Product", "value": best_product,
             "detail": f"Generated {format_currency(product_revenue.max())} in revenue.",
         })
 
         worst_product = product_revenue.idxmin()
         insights.append({
-            "icon": "📉", "label": "Lowest-Selling Product", "value": worst_product,
+            "label": "Lowest-Selling Product", "value": worst_product,
             "detail": f"Generated only {format_currency(product_revenue.min())} in revenue.",
         })
 
@@ -62,7 +62,7 @@ def generate_business_insights(df: pd.DataFrame) -> list[dict]:
     if not country_revenue.empty:
         best_country = country_revenue.idxmax()
         insights.append({
-            "icon": "🌍", "label": "Top Market by Revenue", "value": best_country,
+            "label": "Top Market by Revenue", "value": best_country,
             "detail": f"Contributed {format_currency(country_revenue.max())} "
                       f"({country_revenue.max() / country_revenue.sum() * 100:.1f}% of total revenue).",
         })
@@ -72,14 +72,14 @@ def generate_business_insights(df: pd.DataFrame) -> list[dict]:
     if not customer_revenue.empty:
         best_customer = customer_revenue.idxmax()
         insights.append({
-            "icon": "🥇", "label": "Highest-Value Customer", "value": f"Customer #{int(best_customer)}",
+            "label": "Highest-Value Customer", "value": f"Customer #{int(best_customer)}",
             "detail": f"Spent {format_currency(customer_revenue.max())} in total.",
         })
 
     # Average basket size
     basket = average_basket_size(df)
     insights.append({
-        "icon": "🧺", "label": "Average Basket Size", "value": f"{basket:.1f} items",
+        "label": "Average Basket Size", "value": f"{basket:.1f} items",
         "detail": "Average number of items purchased per invoice.",
     })
 
@@ -87,7 +87,7 @@ def generate_business_insights(df: pd.DataFrame) -> list[dict]:
     growth = calculate_revenue_growth(df)
     trend_word = "increase" if growth >= 0 else "decrease"
     insights.append({
-        "icon": "📈" if growth >= 0 else "📉", "label": "Month-over-Month Growth",
+        "label": "Month-over-Month Growth",
         "value": f"{growth:+.1f}%", "detail": f"Revenue saw a {trend_word} vs. the previous month.",
     })
 

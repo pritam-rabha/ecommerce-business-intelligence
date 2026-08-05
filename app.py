@@ -216,7 +216,7 @@ def render_export_section(df: pd.DataFrame) -> None:
 # Dashboard pages
 # --------------------------------------------------------------------------
 def page_executive_dashboard(df: pd.DataFrame) -> None:
-    st.title("📊 Executive Dashboard")
+    st.title("Executive Dashboard")
     st.caption("A high-level overview of business performance for the selected period.")
 
     kpis = an.get_kpi_summary(df)
@@ -246,7 +246,7 @@ def page_executive_dashboard(df: pd.DataFrame) -> None:
 
 
 def page_sales_analytics(df: pd.DataFrame) -> None:
-    st.title("📈 Sales Analytics")
+    st.title("Sales Analytics")
     st.caption("Revenue trends across different time granularities, plus a simple forecast.")
 
     tab1, tab2, tab3, tab4 = st.tabs(["Monthly", "Weekly", "Daily", "Forecast"])
@@ -275,7 +275,7 @@ def page_sales_analytics(df: pd.DataFrame) -> None:
 
 
 def page_customer_analytics(df: pd.DataFrame) -> None:
-    st.title("👥 Customer Analytics")
+    st.title("Customer Analytics")
     st.caption("Who your customers are, and where the value is concentrated.")
 
     col1, col2 = st.columns(2)
@@ -315,7 +315,7 @@ def page_customer_analytics(df: pd.DataFrame) -> None:
 
 
 def page_product_analytics(df: pd.DataFrame) -> None:
-    st.title("📦 Product Analytics")
+    st.title("Product Analytics")
     st.caption("Which products drive revenue, and which are underperforming.")
 
     col1, col2 = st.columns(2)
@@ -348,7 +348,7 @@ def page_product_analytics(df: pd.DataFrame) -> None:
 
 
 def page_geographic_analytics(df: pd.DataFrame) -> None:
-    st.title("🌍 Geographic Analytics")
+    st.title("Geographic Analytics")
     st.caption("Where in the world revenue and orders are coming from.")
 
     country_df = an.revenue_by_country(df, top_n=20)
@@ -370,40 +370,44 @@ def page_geographic_analytics(df: pd.DataFrame) -> None:
             use_container_width=True,
         )
 
-    st.markdown("#### 🔥 Revenue Heatmap: Weekday vs. Month")
+    st.markdown("#### Revenue Heatmap: Weekday vs. Month")
     heatmap_df = an.revenue_heatmap_data(df)
     if not heatmap_df.empty:
         st.plotly_chart(ch.heatmap_chart(heatmap_df, title="Revenue by Weekday and Month"), use_container_width=True)
 
 
 def page_business_insights(df: pd.DataFrame) -> None:
-    st.title("💡 Business Insights")
+    st.title("Business Insights")
     st.caption("Automatically generated insights based on the current filtered dataset.")
 
     insights = ins.generate_business_insights(df)
     cols = st.columns(2)
     for i, insight in enumerate(insights):
+        icon = insight.get("icon", "ℹ️")
+        label = insight.get("label", "Insight")
+        value = insight.get("value", "--")
+        detail = insight.get("detail", "")
         with cols[i % 2]:
             st.markdown(
                 f"""
                 <div class="insight-card">
-                    <div class="insight-label">{insight['icon']} {insight['label']}</div>
-                    <div class="insight-value">{insight['value']}</div>
-                    <div class="insight-detail">{insight['detail']}</div>
+                    <div class="insight-label">{icon} {label}</div>
+                    <div class="insight-value">{value}</div>
+                    <div class="insight-detail">{detail}</div>
                 </div>
                 """,
                 unsafe_allow_html=True,
             )
 
     st.markdown("---")
-    st.markdown("#### 📊 Order Value Distribution")
+    st.markdown("#### Order Value Distribution")
     order_values = df.groupby("InvoiceNo")["TotalPrice"].sum().reset_index()
     st.plotly_chart(
         ch.histogram_chart(order_values, x="TotalPrice", title="Distribution of Order Values"),
         use_container_width=True,
     )
 
-    st.markdown("#### 🔬 Orders vs. Revenue per Customer")
+    st.markdown("#### Orders vs. Revenue per Customer")
     scatter_df = df.groupby("CustomerID").agg(
         Orders=("InvoiceNo", "nunique"), Revenue=("TotalPrice", "sum")
     ).reset_index()
@@ -414,7 +418,7 @@ def page_business_insights(df: pd.DataFrame) -> None:
 
 
 def page_data_explorer(df: pd.DataFrame, db_queries: OrderQueries | None) -> None:
-    st.title("🗄️ Data Explorer & Export")
+    st.title("Data Explorer & Export")
     st.caption("Inspect the filtered dataset directly and export it, or preview live database query results.")
 
     st.markdown("#### Filtered Data Preview")
