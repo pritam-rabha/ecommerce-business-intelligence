@@ -1,21 +1,3 @@
-"""
-database.py
-------------
-Manages the SQLite database layer using SQLAlchemy Core/ORM.
-
-Responsibilities:
-    - Create the SQLite database and `orders` table automatically if it
-      does not exist.
-    - Load the cleaned dataset into the database.
-    - Provide a small repository of reusable, parameterized SQL queries
-      used throughout the dashboard.
-
-Designed so that swapping SQLite for MySQL later only requires changing
-the connection string passed to `get_engine()` (e.g.
-"mysql+pymysql://user:pass@host/db") -- no other code changes needed,
-since all queries are written in standard, portable SQL.
-"""
-
 from __future__ import annotations
 
 import pandas as pd
@@ -132,10 +114,7 @@ def build_database_from_clean_csv(
     load_dataframe_to_db(df, engine)
     return engine
 
-
-# --------------------------------------------------------------------------
 # Reusable SQL query repository
-# --------------------------------------------------------------------------
 class OrderQueries:
     """
     A small repository of reusable, parameterized SQL queries against the

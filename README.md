@@ -199,6 +199,19 @@ This project targets the **[Online Retail Dataset](https://www.kaggle.com/datase
 - [ ] Deployment to Streamlit Community Cloud
 
 ---
+---
+
+## Author
+
+**Pritam Rabha**
+
+MCA Student | Aspiring AI Engineer | Data Analyst | Business Intelligence Developer
+
+- GitHub: https://github.com/pritam-rabha
+- Portfolio: https://www.pritamrabha.com
+- LinkedIn: https://www.linkedin.com/in/pritamrabha/
+
+If you found this project useful, feel free to ⭐ the repository and connect with me.
 
 ## License
 

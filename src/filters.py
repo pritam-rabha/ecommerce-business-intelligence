@@ -1,11 +1,3 @@
-"""
-filters.py
-----------
-Builds the sidebar filter UI and applies the selected filters to the
-cleaned DataFrame. Kept separate from app.py so the filtering logic can
-be unit tested without a running Streamlit session.
-"""
-
 from __future__ import annotations
 
 from dataclasses import dataclass, field

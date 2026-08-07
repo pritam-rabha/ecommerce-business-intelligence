@@ -1,28 +1,3 @@
-"""
-generate_sample_data.py
-------------------------
-Generates a synthetic dataset that matches the schema of the Kaggle
-"Online Retail Dataset" (https://www.kaggle.com/datasets/carrie1/ecommerce-data).
-
-WHY THIS EXISTS:
-The real dataset cannot be downloaded automatically in this environment
-(no internet access). This script produces realistic, structurally
-identical data (same columns, same data quality issues such as
-cancellations, missing CustomerIDs, and negative quantities) so the
-full pipeline (cleaning -> database -> dashboard) can be built and
-tested end-to-end.
-
-TO USE THE REAL DATA INSTEAD:
-1. Download data.csv from the Kaggle link above.
-2. Rename it to orders.csv.
-3. Drop it into the data/ folder, replacing the generated file.
-4. Re-run the app -- no code changes required, the schema matches.
-
-Columns produced (identical to the real dataset):
-    InvoiceNo, StockCode, Description, Quantity, InvoiceDate,
-    UnitPrice, CustomerID, Country
-"""
-
 import numpy as np
 import pandas as pd
 

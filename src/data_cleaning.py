@@ -1,21 +1,3 @@
-"""
-data_cleaning.py
------------------
-Handles ingestion and cleaning of the raw "Online Retail" style dataset.
-
-Cleaning steps applied (in order):
-    1. Parse dates and enforce correct dtypes.
-    2. Drop exact duplicate rows.
-    3. Remove cancelled orders (InvoiceNo starting with 'C').
-    4. Remove invalid quantities (<= 0) and invalid unit prices (<= 0).
-    5. Handle missing values (drop rows with no CustomerID for
-       customer-level analysis; fill missing Description).
-    6. Create the derived TotalPrice column (Quantity * UnitPrice).
-
-The module can be run standalone (`python src/data_cleaning.py`) to
-regenerate data/orders_clean.csv from data/orders.csv.
-"""
-
 from __future__ import annotations
 
 import pandas as pd

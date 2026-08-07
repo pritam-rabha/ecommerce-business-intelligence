@@ -20,10 +20,7 @@ except ImportError:
 
 logger = get_logger(__name__)
 
-
-# --------------------------------------------------------------------------
 # Executive Dashboard
-# --------------------------------------------------------------------------
 def get_kpi_summary(df: pd.DataFrame) -> dict:
     """
     Compute headline KPIs for the Executive Dashboard.
@@ -74,10 +71,7 @@ def calculate_revenue_growth(df: pd.DataFrame) -> float:
         return 0.0
     return round(((latest - previous) / previous) * 100, 2)
 
-
-# --------------------------------------------------------------------------
 # Sales Analytics
-# --------------------------------------------------------------------------
 def revenue_by_period(df: pd.DataFrame, freq: str = "ME") -> pd.DataFrame:
     """
     Aggregate revenue by time period.
@@ -131,10 +125,7 @@ def sales_forecast_sma(df: pd.DataFrame, window: int = 3, periods_ahead: int = 3
     forecast_df = pd.DataFrame(forecast_rows)
     return pd.concat([monthly, forecast_df], ignore_index=True)
 
-
-# --------------------------------------------------------------------------
 # Customer Analytics
-# --------------------------------------------------------------------------
 def top_customers(df: pd.DataFrame, top_n: int = 10) -> pd.DataFrame:
     """Rank customers by total revenue contributed."""
     if df.empty:
@@ -212,10 +203,7 @@ def customer_segmentation(df: pd.DataFrame) -> pd.DataFrame:
 
     return spend
 
-
-# --------------------------------------------------------------------------
 # Product Analytics
-# --------------------------------------------------------------------------
 def top_products(df: pd.DataFrame, top_n: int = 10) -> pd.DataFrame:
     """Rank products by revenue generated."""
     if df.empty:
@@ -246,10 +234,7 @@ def revenue_by_product(df: pd.DataFrame, top_n: int = 15) -> pd.DataFrame:
     """Alias-style helper for the Product Analytics revenue breakdown chart."""
     return top_products(df, top_n=top_n)
 
-
-# --------------------------------------------------------------------------
 # Geographic Analytics
-# --------------------------------------------------------------------------
 def revenue_by_country(df: pd.DataFrame, top_n: int = 15) -> pd.DataFrame:
     """Aggregate revenue and order counts by country."""
     if df.empty:
@@ -264,10 +249,7 @@ def revenue_by_country(df: pd.DataFrame, top_n: int = 15) -> pd.DataFrame:
     )
     return result
 
-
-# --------------------------------------------------------------------------
 # Cross-cutting helpers
-# --------------------------------------------------------------------------
 def average_basket_size(df: pd.DataFrame) -> float:
     """Average number of items (Quantity) per invoice."""
     if df.empty:

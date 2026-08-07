@@ -1,20 +1,3 @@
-"""
-app.py
-------
-E-Commerce Business Intelligence Platform
-Main Streamlit application entry point.
-
-Run with:
-    streamlit run app.py
-
-The app is organized as a single-file multi-page dashboard using a
-sidebar radio for navigation (kept in one file, rather than Streamlit's
-native /pages folder, so the whole app is easy to review end-to-end for
-resume/portfolio purposes). All heavy logic lives in src/ modules; this
-file is primarily responsible for layout, caching, and wiring pages
-together.
-"""
-
 from __future__ import annotations
 
 import sys
@@ -23,8 +6,6 @@ from pathlib import Path
 import pandas as pd
 import streamlit as st
 
-# Make src/ importable regardless of the working directory streamlit is
-# launched from.
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from src import analysis as an
@@ -41,9 +22,7 @@ from src.utils import (
 
 logger = get_logger(__name__)
 
-# --------------------------------------------------------------------------
 # Page configuration & global style
-# --------------------------------------------------------------------------
 st.set_page_config(
     page_title="E-Commerce BI Platform",
     page_icon="📊",
@@ -108,10 +87,7 @@ CUSTOM_CSS = """
 """
 st.markdown(CUSTOM_CSS, unsafe_allow_html=True)
 
-
-# --------------------------------------------------------------------------
 # Cached data loading pipeline
-# --------------------------------------------------------------------------
 @st.cache_data(show_spinner="Loading and cleaning data...")
 def load_clean_data() -> pd.DataFrame:
     """
@@ -143,10 +119,7 @@ def get_database_queries() -> OrderQueries:
     engine = build_database_from_clean_csv()
     return OrderQueries(engine)
 
-
-# --------------------------------------------------------------------------
 # Reusable UI components
-# --------------------------------------------------------------------------
 def kpi_card(label: str, value: str, delta: str | None = None, positive: bool = True) -> str:
     """Return HTML for a single KPI card."""
     delta_html = ""
@@ -211,10 +184,7 @@ def render_export_section(df: pd.DataFrame) -> None:
             use_container_width=True,
         )
 
-
-# --------------------------------------------------------------------------
 # Dashboard pages
-# --------------------------------------------------------------------------
 def page_executive_dashboard(df: pd.DataFrame) -> None:
     st.title("Executive Dashboard")
     st.caption("A high-level overview of business performance for the selected period.")
@@ -436,10 +406,7 @@ def page_data_explorer(df: pd.DataFrame, db_queries: OrderQueries | None) -> Non
         db_col4.metric("DB Products", format_number(db_queries.total_products()))
         st.dataframe(db_queries.top_products(10), use_container_width=True)
 
-
-# --------------------------------------------------------------------------
 # Main application flow
-# --------------------------------------------------------------------------
 def main() -> None:
     render_sidebar_brand()
 

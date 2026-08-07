@@ -1,21 +1,9 @@
-"""
-utils.py
---------
-Shared utilities used across the project: centralized logging configuration,
-path constants, and small formatting helpers reused by multiple pages.
-
-Keeping these in one module avoids circular imports between analysis.py,
-charts.py, database.py, etc.
-"""
-
 import logging
 import os
 import sys
 from pathlib import Path
 
-# --------------------------------------------------------------------------
 # Path constants (single source of truth for file locations)
-# --------------------------------------------------------------------------
 BASE_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = BASE_DIR / "data"
 DATABASE_DIR = BASE_DIR / "database"
@@ -29,10 +17,7 @@ DATABASE_PATH = DATABASE_DIR / "ecommerce.db"
 for _directory in (DATA_DIR, DATABASE_DIR, ASSETS_DIR):
     _directory.mkdir(parents=True, exist_ok=True)
 
-
-# --------------------------------------------------------------------------
 # Logging
-# --------------------------------------------------------------------------
 def get_logger(name: str) -> logging.Logger:
     """
     Return a configured logger instance.
@@ -62,10 +47,7 @@ def get_logger(name: str) -> logging.Logger:
 
     return logger
 
-
-# --------------------------------------------------------------------------
 # Formatting helpers (used by KPI cards and chart labels)
-# --------------------------------------------------------------------------
 def format_currency(value: float, symbol: str = "£") -> str:
     """Format a number as currency with thousands separators, e.g. £12,345.67."""
     try:

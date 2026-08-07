@@ -1,12 +1,3 @@
-"""
-insights.py
------------
-Generates automatic, natural-language business insights from the cleaned
-DataFrame for the "Business Insights" dashboard page. Each insight is
-returned as a dict of {label, value, detail} so the page can render them
-as clean cards without extra parsing logic.
-"""
-
 from __future__ import annotations
 
 import pandas as pd

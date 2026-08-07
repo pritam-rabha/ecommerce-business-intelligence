@@ -1,11 +1,3 @@
-"""
-export.py
----------
-Provides in-memory export utilities so the dashboard can offer CSV and
-Excel downloads of the currently filtered dataset without writing
-temporary files to disk.
-"""
-
 from __future__ import annotations
 
 from io import BytesIO
