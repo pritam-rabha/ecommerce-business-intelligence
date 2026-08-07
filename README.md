@@ -10,15 +10,19 @@ Built to demonstrate the end-to-end skill set of a **Data Analyst / Business Int
 
 ## Table of Contents
 
+## Table of Contents
+
 - [Project Overview](#-project-overview)
 - [Features](#-features)
 - [Screenshots](#-screenshots)
-- [Tech Stack](#-technologies-used)
+- [Tech Stack](#-tech-stack)
 - [Project Structure](#-project-structure)
 - [Installation](#-installation)
 - [Usage](#-usage)
+- [Live Demo](#-live-demo)
 - [Dataset](#-dataset)
 - [Future Improvements](#-future-improvements)
+- [Author](#-author)
 - [License](#-license)
 
 ---
@@ -170,6 +174,14 @@ python -m src.database          # rebuilds database/ecommerce.db
 
 ---
 
+## Live Demo
+
+The application is deployed on Streamlit Community Cloud and can be accessed here:
+
+**Application:** https://ecommerce-business-intelligence.streamlit.app/
+
+---
+
 ## Dataset
 
 This project targets the **[Online Retail Dataset](https://www.kaggle.com/datasets/carrie1/ecommerce-data)** on Kaggle — real transactional data from a UK-based online retailer (Dec 2010–Dec 2011), with columns:
@@ -197,8 +209,6 @@ This project targets the **[Online Retail Dataset](https://www.kaggle.com/datase
 - [ ] Unit test suite (pytest) for `src/` modules
 - [ ] Dockerfile for containerized deployment
 - [ ] Deployment to Streamlit Community Cloud
-
----
 ---
 
 ## Author
@@ -206,12 +216,16 @@ This project targets the **[Online Retail Dataset](https://www.kaggle.com/datase
 **Pritam Rabha**
 
 MCA Student | Aspiring AI Engineer | Data Analyst | Business Intelligence Developer
-- Live Demo: https://ecommerce-business-intelligence.streamlit.app/
-- GitHub: https://github.com/pritam-rabha
-- Portfolio: https://www.pritamrabha.com
-- LinkedIn: https://www.linkedin.com/in/pritamrabha/
 
-If you found this project useful, feel free to ⭐ the repository and connect with me.
+GitHub: https://github.com/pritam-rabha
+
+Portfolio: https://www.pritamrabha.com
+
+LinkedIn: https://www.linkedin.com/in/pritamrabha/
+
+If you found this project useful, feel free to star the repository and connect with me.
+
+---
 
 ## License
 
