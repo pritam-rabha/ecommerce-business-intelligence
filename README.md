@@ -12,18 +12,20 @@ Built to demonstrate the end-to-end skill set of a **Data Analyst / Business Int
 
 ## Table of Contents
 
-- [Project Overview](#-project-overview)
-- [Features](#-features)
-- [Screenshots](#-screenshots)
-- [Tech Stack](#-tech-stack)
-- [Project Structure](#-project-structure)
-- [Installation](#-installation)
-- [Usage](#-usage)
-- [Live Demo](#-live-demo)
-- [Dataset](#-dataset)
-- [Future Improvements](#-future-improvements)
-- [Author](#-author)
-- [License](#-license)
+## Table of Contents
+
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Technologies Used](#technologies-used)
+- [Project Structure](#project-structure)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Live Demo](#live-demo)
+- [Dataset](#dataset)
+- [Future Improvements](#future-improvements)
+- [Author](#author)
+- [License](#license)
 
 ---
 
