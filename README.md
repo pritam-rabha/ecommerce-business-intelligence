@@ -10,10 +10,6 @@ Built to demonstrate the end-to-end skill set of a **Data Analyst / Business Int
 
 ## Table of Contents
 
-## Table of Contents
-
-## Table of Contents
-
 - [Project Overview](#project-overview)
 - [Features](#features)
 - [Screenshots](#screenshots)
