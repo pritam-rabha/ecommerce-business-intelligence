@@ -206,7 +206,7 @@ This project targets the **[Online Retail Dataset](https://www.kaggle.com/datase
 **Pritam Rabha**
 
 MCA Student | Aspiring AI Engineer | Data Analyst | Business Intelligence Developer
-
+- Live Demo: https://ecommerce-business-intelligence.streamlit.app/
 - GitHub: https://github.com/pritam-rabha
 - Portfolio: https://www.pritamrabha.com
 - LinkedIn: https://www.linkedin.com/in/pritamrabha/
